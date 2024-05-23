@@ -10,7 +10,8 @@ def chat():
 
     if "openai_model" not in st.session_state:
         # st.session_state["openai_model"] = "gpt-4-turbo-preview"
-        st.session_state["openai_model"] = "gpt-4o"
+        # st.session_state["openai_model"] = "gpt-4o"
+        st.session_state["openai_model"] = "gpt-3.5-turbo"
 
     if "Clear" not in st.session_state:
         st.session_state.Clear = False
