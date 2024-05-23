@@ -224,7 +224,7 @@ def chat():
                 "UserAction" : InputUserAction,
                 # "UserAction" : "RUNNING",
             })
-            response = response["text"]
+            response = response["response"]
             st.write(response)
 
         
