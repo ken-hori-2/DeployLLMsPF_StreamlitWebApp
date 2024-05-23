@@ -25,11 +25,8 @@ def chat():
     
 
     # 2024/05/23
-    pre_template = """
-               あなたは人間と話すチャットボットです。ユーザーの要求に答えてください。
-
-               
-               """
+    pre_template = "You are an AI chatbot having a conversation with a human."
+    # """あなたは人間と話すチャットボットです。ユーザーの要求に答えてください。"""
     # 2024/05/23
     
     if "system_prompt" not in st.session_state:
