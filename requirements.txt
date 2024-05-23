@@ -3,3 +3,14 @@ langchain
 langchain_community
 python-dotenv
 openai
+
+mitosheet
+pandas
+
+
+duckduckgo-search
+typing
+streamlit_antd_components
+numexpr
+st-img-pastebutton
+langchain_openai
