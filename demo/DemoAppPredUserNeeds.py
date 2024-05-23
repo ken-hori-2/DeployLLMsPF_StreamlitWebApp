@@ -74,7 +74,7 @@ def chat():
                 with st.chat_message(message["role"], avatar = "🤖"):
                     st.markdown(message["content"])
 
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("What is your state of action?"): # "What is up?"):
         if st.session_state.openai_api_key == "":
             sac.alert(
                 label='warning', 
