@@ -208,12 +208,18 @@ def chat():
             # response = response["output"]
             response = response["text"]
             st.write(response)
-        st.session_state.messages.append(
-            {
-                "role": "assistant", 
-                "content": response
-            }
-        )
+
+        
+        
+        # 会話履歴を残さない場合はコメントアウト
+        # st.session_state.messages.append(
+        #     {
+        #         "role": "assistant", 
+        #         "content": response
+        #     }
+        # )
+
+        
         st.session_state.Clear = True
 
     if st.session_state.Clear:
