@@ -92,8 +92,8 @@ def chat():
 
         
         
-        llm = ChatOpenAI(temperature=0, streaming=True, model="gpt-3.5-turbo",openai_api_key=st.session_state.openai_api_key)
-        prompt = PromptTemplate(
+        llm = ChatOpenAI(temperature=st.session_state.temperature, streaming=True, model=st.session_state["openai_model"],openai_api_key=st.session_state.openai_api_key)
+        prompt_PreInput = PromptTemplate(
             input_variables=["UserAction"],
             # template="{job}に一番オススメのプログラミング言語は何?"
             # その後、現在が{time}、ユーザーの行動状態が{UserAction}の場合どの機能を提案するか教えてください。
@@ -122,13 +122,11 @@ def chat():
             #     """
             template="""
                 現在時刻が11時30分、ユーザーの行動状態が{UserAction}の場合以下のうちのどの機能を提案するか教えてください。
-                あなたが提案できる機能は
-                "会議情報", "楽曲再生", "経路検索", "リアルタイム情報検索", "レストラン検索", "ニュース情報", "天気情報"
-                です。
+                あなたが提案できる機能は、「"会議情報", "楽曲再生", "経路検索", "リアルタイム情報検索", "レストラン検索", "ニュース情報", "天気情報"」です。
                 各機能の提案する確率と最終的な提案(Final Answer:)も教えてください。
                 """
         )
-        chain = LLMChain(llm=llm, prompt=prompt)
+        chain = LLMChain(llm=llm, prompt=prompt_PreInput)
         # print(chain("データサイエンティスト"))
 
         
