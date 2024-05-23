@@ -116,8 +116,6 @@ def chat():
                 19:00, RUNNING, 楽曲再生
                 19:30, RUNNING, 楽曲再生
 
-
-
                 あなたが提案できる機能は
                 "会議情報", "楽曲再生", "経路検索", "リアルタイム情報検索", "レストラン検索", "ニュース情報", "天気情報"
                 です。
@@ -175,13 +173,13 @@ def chat():
             # response = response["output"]
             response = response["text"]
             st.write(response)
-        st.session_state.messages_agent.append(
+        st.session_state.messages.append(
             {
                 "role": "assistant", 
                 "content": response
             }
         )
-        st.session_state.Clear_agent = True
+        st.session_state.Clear = True
 
     if st.session_state.Clear:
         if st.button('clear chat history'):
