@@ -1,2 +1,2 @@
-stream_chat
+streamlit_chat
 langchain
