@@ -30,6 +30,7 @@ def chat():
     
     
     # Todo
+    """ 2024/05/24 Next Todo (事前にどの情報が来るか教える)"""
     """ 入力される情報は、時間と行動状態です。(例：time:10:00, Action:)"""
 
     
@@ -82,10 +83,14 @@ def chat():
                     st.markdown(message["content"])
 
     # UI画面で入力 (promptに値が格納されていたらTrue)
-    # if prompt := st.chat_input("What is your state of action?"): # "What is up?"):
+    # if prompt := st.chat_input("What is your state of action?"): # "What is up?"): # これまでのやり方
+    # ここにスマホ側からデータを受信したらpromptに書き込めばいい？ # if prompt := スマホのデータ
     prompt = "12:00 WALKING"
+    i = 0
     if prompt:
     # テスト
+        print("test:", i)
+        i+=1
     
         if st.session_state.openai_api_key == "":
             sac.alert(
