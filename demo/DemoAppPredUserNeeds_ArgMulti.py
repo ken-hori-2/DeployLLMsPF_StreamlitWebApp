@@ -10,10 +10,10 @@ from langchain.prompts import PromptTemplate
 
 def chat():
     i = 0
-    
+
     st.title("ChatGPT by Streamlit (Prediction User Needs Arg Multi)")
     st.write("**it is a simple chatbot made only with OpenAI and Streamlit. You can set system prompts, model, and temperature as options.**")
-    client = OpenAI(api_key=st.session_state.openai_api_key)
+    # client = OpenAI(api_key=st.session_state.openai_api_key)
 
     if "openai_model" not in st.session_state:
         # st.session_state["openai_model"] = "gpt-4-turbo-preview"
@@ -89,7 +89,7 @@ def chat():
     # UI画面で入力 (promptに値が格納されていたらTrue)
     # if prompt := st.chat_input("What is your state of action?"): # "What is up?"): # これまでのやり方
     # ここにスマホ側からデータを受信したらpromptに書き込めばいい？ # if prompt := スマホのデータ
-    prompt = "12:00 WALKING"
+    prompt = "12:00 WALKING" # おそらく、WEB上のAPPにアクセスがあると(GET?)、chat()が実行されている？
     if prompt:
     # テスト
         st.write("test:", i)
@@ -109,7 +109,7 @@ def chat():
 
         
         
-        llm = ChatOpenAI(temperature=st.session_state.temperature, streaming=True, model=st.session_state["openai_model"],openai_api_key=st.session_state.openai_api_key)
+        llm = ChatOpenAI(temperature=st.session_state.temperature, streaming=True, model=st.session_state["openai_model"], openai_api_key=st.session_state.openai_api_key)
         prompt_PreInput = PromptTemplate(
             # input_variables=["UserAction"],
             input_variables=["time", "UserAction"],
