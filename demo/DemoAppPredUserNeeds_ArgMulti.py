@@ -6,9 +6,11 @@ from langchain_community.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
-i = 0
+# i = 0
 
 def chat():
+    i = 0
+    
     st.title("ChatGPT by Streamlit (Prediction User Needs Arg Multi)")
     st.write("**it is a simple chatbot made only with OpenAI and Streamlit. You can set system prompts, model, and temperature as options.**")
     client = OpenAI(api_key=st.session_state.openai_api_key)
