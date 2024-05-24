@@ -89,7 +89,7 @@ def chat():
     i = 0
     if prompt:
     # テスト
-        print("test:", i)
+        st.write("test:", i)
         i+=1
     
         if st.session_state.openai_api_key == "":
