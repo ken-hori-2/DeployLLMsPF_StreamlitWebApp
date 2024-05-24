@@ -27,6 +27,13 @@ def chat():
     # 2024/05/23
     pre_template = "You are an AI chatbot having a conversation with a human."
     # """あなたは人間と話すチャットボットです。ユーザーの要求に答えてください。"""
+    
+    
+    # Todo
+    """ 入力される情報は、時間と行動状態です。(例：time:10:00, Action:)"""
+
+    
+
     # 2024/05/23
     
     if "system_prompt" not in st.session_state:
@@ -74,7 +81,12 @@ def chat():
                 with st.chat_message(message["role"], avatar = "🤖"):
                     st.markdown(message["content"])
 
-    if prompt := st.chat_input("What is your state of action?"): # "What is up?"):
+    # UI画面で入力 (promptに値が格納されていたらTrue)
+    # if prompt := st.chat_input("What is your state of action?"): # "What is up?"):
+    prompt = "12:00 WALKING"
+    if prompt:
+    # テスト
+    
         if st.session_state.openai_api_key == "":
             sac.alert(
                 label='warning', 

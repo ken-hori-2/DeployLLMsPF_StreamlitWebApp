@@ -2,7 +2,7 @@ from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langserve import RemoteRunnable
 
-openai_llm = RemoteRunnable("http://localhost:8000/openai/")
+openai_llm = RemoteRunnable("http://localhost:8000/openai/") # https://deployllmspfappwebapp-6trwdru7zjvzh4dcigb9wt.streamlit.app/")
 # anthropic = RemoteRunnable("http://localhost:8000/anthropic/")
 
 
